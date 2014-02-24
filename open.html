@@ -18,11 +18,8 @@
   var HEIGHT = 500; 
 
   function circle(x,y,r) {
-    var brutusIMG = new Image();
-    brutusIMG.src = "static/img/brutus.jpg";
     ctx.beginPath();
-    // ctx.arc(x, y, r, 0, Math.PI*2, true);
-    ctx.drawImage(brutusIMG, x, y, r*4, r*4);
+    ctx.arc(x, y, r, 0, Math.PI*2, true);
     ctx.fill();
   }
 
