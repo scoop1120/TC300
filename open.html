@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<htmL> 
+<head>
+  <script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script> 
+  <!-- // <script src="static/js/leap.min.js"></script> -->
+  <script src="static/js/leap.min.js"></script>
+
+</head>
+<body>
+  <canvas id="canvas" width="1100" height="500"></canvas> 
+
+<script>
+
+/* LIBRARY CODE */
+  var canvas;  
+  var ctx;
+  var WIDTH = 1100;
+  var HEIGHT = 500; 
+
+  function circle(x,y,r) {
+    var brutusIMG = new Image();
+    brutusIMG.src = "static/img/brutus.jpg";
+    ctx.beginPath();
+    // ctx.arc(x, y, r, 0, Math.PI*2, true);
+    ctx.drawImage(brutusIMG, x, y, r*4, r*4);
+    ctx.fill();
+  }
+
+  function rect(x,y,w,h) {
+    ctx.beginPath();
+    ctx.rect(x,y,w,h);
+    ctx.closePath();
+    ctx.fill();
+  }
+
+  function clear() {
+    ctx.clearRect(0, 0, WIDTH, HEIGHT);
+  }
+
+  function init() {
+    canvas = document.getElementById("canvas");
+    ctx = canvas.getContext("2d");
+    return setInterval(draw, 10);
+  }
+
+  /**************END LIBRARY CODE */
+
+  /******** PADDLES  ****/
+  
+
+  // function draw_paddles(){
+  //     //left paddle
+  //   ctx.fillStyle ="#ffcb05";
+  //   rect(0, LeftPaddleY, LeftPaddleW, LeftPaddleH);
+  //     //right paddle
+  //   ctx.fillStyle="#00274c";
+  //   rect((WIDTH - RightPaddleW) , RightPaddleY, RightPaddleW, RightPaddleH);
+  // }
+
+
+  /******** END PADDLES ******/
+
+  
+  // END MOVEMENT 
+
+  // GAME FUNCTIONS //
+ 
+
+  
+
+  // *** END MOVEMENT    ***
+
+  //var intervalID = init();
+  //init_paddles();
+
+/* End Library code */
+ctx.fillStyle ="#ffcb05";
+rect(0,)
+});
+
+
+</script>
+</body>
+</htmL>
+
