@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <htmL> 
 <head>
-  <script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script> 
+  <script src="js/jquery.min.js" type="text/javascript"></script> 
   <!-- // <script src="static/js/leap.min.js"></script> -->
-  <script src="static/js/leap.min.js"></script>
 
 </head>
 <body>
@@ -16,6 +15,21 @@
   var ctx;
   var WIDTH = 1100;
   var HEIGHT = 500; 
+
+  /*advanced */
+  /*
+  context.moveTo(10, 10); // give the (x,y) coordinates
+  context.lineTo(100, 10);
+  context.lineTo(10, 100);
+  context.lineTo(10, 10);
+
+  // Done! Now fill the shape, and draw the stroke.
+  // Note: your shape will not be visible until you call any of the two methods.
+  context.fill();
+  context.stroke();
+  context.closePath();
+
+  */
 
   function circle(x,y,r) {
     ctx.beginPath();
@@ -30,6 +44,15 @@
     ctx.fill();
   }
 
+  function person(x,y,size){
+    circle(x+1.5*size, y+size, size); // head
+    rect(x+1.5*size-size/6, y+2*size, size/3, size*3); // body
+    rect(x, y+3*size, 3*size, size/3 ); // arms
+    rect(x+.4*size, y+5*size, 2*size, size/3 ); // hips
+    rect(x+.4*size, y+5*size, size/3, size*2 ); // left leg
+    rect(x+2.4*size, y+5*size, size/3, size*2 ); // left leg
+  }
+
   function clear() {
     ctx.clearRect(0, 0, WIDTH, HEIGHT);
   }
@@ -37,43 +60,68 @@
   function init() {
     canvas = document.getElementById("canvas");
     ctx = canvas.getContext("2d");
-    return setInterval(draw, 10);
+    //return setInterval(draw, 10);
   }
 
-  /**************END LIBRARY CODE */
-
-  /******** PADDLES  ****/
-  
-
-  // function draw_paddles(){
-  //     //left paddle
-  //   ctx.fillStyle ="#ffcb05";
-  //   rect(0, LeftPaddleY, LeftPaddleW, LeftPaddleH);
-  //     //right paddle
-  //   ctx.fillStyle="#00274c";
-  //   rect((WIDTH - RightPaddleW) , RightPaddleY, RightPaddleW, RightPaddleH);
-  // }
-
-
-  /******** END PADDLES ******/
-
-  
-  // END MOVEMENT 
-
-  // GAME FUNCTIONS //
- 
-
-  
-
-  // *** END MOVEMENT    ***
-
-  //var intervalID = init();
-  //init_paddles();
-
 /* End Library code */
+
+/* YOUR CODE HERE */
+
+// to draw a circle:
+// circle(x_coord, y_coord, radius);
+
+// to draw a square:
+// square(x_coord, y_coord, width, heighth);
+
+// you must start by calling init();
+init();
+// pick your first color
 ctx.fillStyle ="#ffcb05";
-rect(0,)
-});
+
+
+
+// final still frame
+//person(5,5,70);
+
+
+var movie = [ 
+  function(){
+    clear();
+    // scene here 
+    rect(0,0,10,10);
+
+    // end scene
+  }, 
+  function(){
+    clear();
+    // scene here 
+    circle(30,30,10);
+
+    // end scene
+  }, 
+  function(){
+    clear();
+    // scene here 
+    rect(0,0,20,10);
+
+
+    // end scene
+  }, 
+  function(){
+    clear();
+    // scene here 
+    person(10,10,10);
+
+    // end scene
+  } // NO SEMI COLON AFTER LAST FUNCTION (this curly brace)
+]; 
+
+// for loop for animation -- Don't need to modify
+for(var i = 0; i < movie.length; ++i){
+  window.setTimeout(movie[i], i*1000);
+}
+
+
 
 
 </script>
