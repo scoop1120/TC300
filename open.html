@@ -46,108 +46,22 @@ function init(cb) { // DO NOT MODIFY
 // DO NOT FORGET TO HAVE THE "#" in front of the hex value
 
 /* ------------------ YOUR CODE HERE ----------------- */
+function run(){
+  ctx.fillStyle ="yellow";
+  person(600,400,5);
+  ctx.fillStyle ="green";    
+  rect(650,400, 40, 40);
 
-// To Make a movie, enter each scene 
-var movie = [ 
-  function(){
-    clear();
-    // first scene here 
-    ctx.fillStyle ="yellow"; // any drawings after this line will be yellow
-    person(600,400,5);   // draw a person at 600,400 with a size of 5
-    ctx.fillStyle ="green"; // any drawings after this line will be green
-    rect(650,400, 40, 40);  // draw a rectangle at 650, 400 that is 40 pixels by 40pixels
-    // end scene
-  }, 
-  function(){
-    clear();
-    // scene here 
-    // end scene
-  }, 
-  function(){
-    clear();
-    // scene here 
-    // end scene
-  }, 
-  function(){
-    clear();
-    // scene here 
-    // end scene
-  }, 
-  function(){
-    clear();
-    // scene here 
-    // end scene
-  }, 
-  function(){
-    clear();
-    // scene here 
 
-    // end scene
-  }, 
-  function(){
-    clear();
-    // scene here 
-    // end scene
-  }, 
-  function(){
-    clear();
-    // scene here 
-    // end scene
-  }, 
-  function(){
-    clear();
-    // scene here 
-    // end scene
-  }, 
-  function(){
-    clear();
-    // scene here 
-    // end scene
-  }, 
-  function(){
-    clear();
-    // scene here 
-    // end scene
-  }, 
-  function(){
-    clear();
-    // scene here 
-    // end scene
-  }, 
-  function(){
-    clear();
-    // scene here 
-    // end scene
-  }, 
-  function(){
-    clear();
-    // scene here 
-    // end sceneX
-  }, 
-  function(){
-    clear();
-    // Last scene here 
-    ctx.fillStyle ="yellow";
-    person(600,400,5);
-    ctx.fillStyle ="green";    
-    rect(650,400, 40, 40);
-
-    // end scene
-  } // NO SEMI COLON AFTER LAST FUNCTION (this curly brace)
-]; 
+}
 
 /* ------------------ END YOUR CODE HERE ----------------- */
 
 /*  DON'T NEED TO MODIFY ANYTHING AFTER THIS LINE */
 
-// for loop for animation 
 
-function run(){
-  for(var i = 0; i < movie.length; ++i){
-  window.setTimeout(movie[i], i*1000);
-  }
-}
-// this function sets everything up and then starts the movie
+
+// this function sets everything up and then starts the drawing
 function start(){
   init(run);
 }
